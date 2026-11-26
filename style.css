@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+  color: #1f2933;
+  background: #eef1f5;
+}
+
+.header {
+  padding: 16px 24px;
+  background: #1f3a5f;
+  color: #fff;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* 入力欄 */
+.todo-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  padding: 16px;
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 160px;
+}
+
+.field label {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.field input {
+  padding: 8px 10px;
+  font-size: 14px;
+  border: 1px solid #c4ccd6;
+  border-radius: 6px;
+}
+
+.field input:focus {
+  outline: 2px solid #3b82c4;
+  outline-offset: 1px;
+}
+
+.add-button {
+  padding: 9px 24px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background: #1f3a5f;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background: #2c5282;
+}
+
+/* 3列ボード */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+
+.column {
+  padding: 12px;
+  background: #dde3ea;
+  border-radius: 8px;
+  min-height: 300px;
+}
+
+.column-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+}
+
+/* 列ごとの色分け */
+#todo .column-title  { border-left: 4px solid #8a94a3; padding-left: 8px; }
+#doing .column-title { border-left: 4px solid #e0a030; padding-left: 8px; }
+#done .column-title  { border-left: 4px solid #3a9a6a; padding-left: 8px; }
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* スマホ幅では縦に並べる */
+@media (max-width: 700px) {
+  .board {
+    grid-template-columns: 1fr;
+  }
+}
